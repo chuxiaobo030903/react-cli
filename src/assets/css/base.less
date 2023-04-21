@@ -1,0 +1,484 @@
+@charset "utf-8";
+// 加载antd 全局样式
+@import '~antd/dist/antd.min.css';
+/*清除所有元素轮廓线，及内外边距属性*/
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+/*清除输入焦点轮廓线*/
+*:focus {
+  outline: none;
+}
+
+html,
+body,
+/*字体更具实际项目自己添加字体样式和大小*/
+body {
+  font-family: arial, 微软雅黑;
+  font-size: 14rem;
+  overflow: auto;
+  min-width: 1200px;
+  color: #333;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #333;
+}
+a:hover {
+  text-decoration: none;
+}
+img {
+  border: 0;
+}
+ul {
+  list-style: none;
+}
+/*input在chrom浏览器下默认显示黄色变成白色*/
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+/*清除浮动*/
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: ' ';
+  clear: both;
+  height: 0;
+}
+* html .clearfix {
+  zoom: 1;
+}
+/* IE6 */
+*:first-child + html .clearfix {
+  zoom: 1;
+}
+/*清除所有*/
+.clear {
+  clear: both;
+}
+
+code {
+  font-family: '宋体';
+}
+/*注意:在用xbox PC端下布局时在火狐浏览器下如果用到此ＭＳＰゴシック字体，*/
+/*必须要在字体后面加上"ＭＳＰゴシック" !important 调整优先级*/
+
+/*布局公共CSS类*/
+.xbox {
+  /* Webkit: collapse white-space between units 去掉IE10以下布局都不可以用*/
+  letter-spacing: -0.31em;
+  *letter-spacing: normal; /* reset IE < 8 */
+  *word-spacing: -0.43em; /* IE < 8: collapse white-space between units */
+  text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
+  display: -webkit-flex;
+  -webkit-flex-flow: row wrap;
+  /* IE10 uses display: flexbox */
+  display: -ms-flexbox;
+  -ms-flex-flow: row wrap;
+}
+.xbox-1,
+.xbox-1-2,
+.xbox-1-3,
+.xbox-2-3,
+.xbox-1-4,
+.xbox-3-4,
+.xbox-1-5,
+.xbox-2-5,
+.xbox-3-5,
+.xbox-4-5,
+.xbox-1-6,
+.xbox-5-6,
+.xbox-11-24,
+.xbox-13-24,
+.xbox-7-12,
+.xbox-5-12,
+.xbox-1-8,
+.xbox-3-8,
+.xbox-5-8,
+.xbox-7-8,
+.xbox-1-24,
+.xbox-1-12,
+.xbox-7-24,
+.xbox-5-24 {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top; /*设置元素的垂直对齐文本的顶部 */
+  text-rendering: auto;
+}
+.xbox-1 {
+  width: 100%;
+}
+.xbox-1-2 {
+  width: 50%;
+  *width: 49.969%;
+}
+.xbox-1-3 {
+  width: 33.3333%;
+  *width: 33.3023%;
+}
+.xbox-2-3 {
+  width: 66.6667%;
+  *width: 66.6357%;
+}
+.xbox-1-4 {
+  width: 25%;
+  *width: 24.969%;
+}
+.xbox-3-4 {
+  width: 75%;
+  *width: 74.969%;
+}
+.xbox-1-5 {
+  width: 20%;
+  *width: 19.969%;
+}
+.xbox-2-5 {
+  width: 40%;
+  *width: 39.969%;
+}
+.xbox-3-5 {
+  width: 60%;
+  *width: 59.969%;
+}
+.xbox-4-5 {
+  width: 80%;
+  *width: 79.969%;
+}
+.xbox-1-6 {
+  width: 16.6667%;
+  *width: 16.6357%;
+}
+.xbox-5-6 {
+  width: 83.3333%;
+  *width: 83.3023%;
+}
+.xbox-11-24 {
+  width: 45.8333%;
+  *width: 45.8023%;
+}
+.xbox-13-24 {
+  width: 54.1667%;
+  *width: 54.1357%;
+}
+.xbox-5-12 {
+  width: 41.6667%;
+  *width: 41.6357%;
+}
+.xbox-7-12 {
+  width: 58.3333%;
+  *width: 58.3023%;
+}
+.xbox-1-8 {
+  width: 12.5%;
+  *width: 12.469%;
+}
+.xbox-3-8 {
+  width: 37.5%;
+  *width: 37.469%;
+}
+.xbox-7-8 {
+  width: 87.5%;
+  *width: 87.469%;
+}
+.xbox-5-8 {
+  width: 62.5%;
+  *width: 62.469%;
+}
+.xbox-1-24 {
+  width: 4.1667%;
+  *width: 4.1357%;
+}
+.xbox-1-12 {
+  width: 8.3333%;
+  *width: 8.3023%;
+}
+.xbox-5-24 {
+  width: 20.8333%;
+  *width: 20.3023%;
+}
+.xbox-7-24 {
+  width: 29.1667%;
+  *width: 29.1357%;
+}
+
+/*input button 样式*/
+input[type='button'] {
+  cursor: pointer;
+}
+
+/*文本超出省略*/
+.xtextoverflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.xhide {
+  display: none;
+}
+.xshow {
+  display: block;
+}
+.xmc {
+  margin: 0 auto;
+}
+.tc {
+  text-align: center;
+}
+.tr {
+  text-align: right;
+}
+.tl {
+  text-align: left;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.fb {
+  font-weight: bold;
+}
+.cp{cursor:pointer}
+.pr{position: relative}
+
+/*纵向(垂直)弹性盒子*/
+.xcol-box{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-flex-flow: column;
+  flex-flow: column;
+  height: 100%;
+}
+
+/*横向(水平)弹性盒子*/
+.xrow-box {
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-flow: row;
+  flex-flow: row;
+}
+
+.xflex {
+  flex: 1;
+  -webkit-flex: 1;
+  -webkit-box-flex: 1;
+}
+
+/* 水平垂直居中 */
+.xmm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.xym {
+  display: flex;
+  align-items: center;
+}
+.xxm {
+  display: flex;
+  justify-content: center;
+}
+
+/* 二行省略 */
+.overflow2 {
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 三行省略 */
+.overflow3 {
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.mt5 {
+  margin-top: 5rem;
+}
+.mt10 {
+  margin-top: 10rem;
+}
+.mt15 {
+  margin-top: 15rem;
+}
+.mt20 {
+  margin-top: 20rem;
+}
+.mt25 {
+  margin-top: 25rem;
+}
+.mt30 {
+  margin-top: 30rem;
+}
+
+.mb5 {
+  margin-bottom: 5rem;
+}
+.mb10 {
+  margin-bottom: 10rem;
+}
+.mb15 {
+  margin-bottom: 15rem;
+}
+.mb20 {
+  margin-bottom: 20rem;
+}
+.mb25 {
+  margin-bottom: 25rem;
+}
+.mb30 {
+  margin-bottom: 30rem;
+}
+
+.ml5 {
+  margin-left: 5rem;
+}
+.ml10 {
+  margin-left: 10rem;
+}
+.ml15 {
+  margin-left: 15rem;
+}
+.ml20 {
+  margin-left: 20rem;
+}
+.ml25 {
+  margin-left: 25rem;
+}
+.ml30 {
+  margin-left: 30rem;
+}
+
+.mr5 {
+  margin-right: 5rem;
+}
+.mr10 {
+  margin-right: 10rem;
+}
+.mr15 {
+  margin-right: 15rem;
+}
+.mr20 {
+  margin-right: 20rem;
+}
+.mr25 {
+  margin-right: 25rem;
+}
+.mr30 {
+  margin-right: 30rem;
+}
+
+.pt5 {
+  padding-top: 5rem;
+}
+.pt10 {
+  padding-top: 10rem;
+}
+.pt15 {
+  padding-top: 15rem;
+}
+.pt20 {
+  padding-top: 20rem;
+}
+.pt25 {
+  padding-top: 25rem;
+}
+.pt30 {
+  padding-top: 30rem;
+}
+
+.pb5 {
+  padding-bottom: 5rem;
+}
+.pb10 {
+  padding-bottom: 10rem;
+}
+.pb15 {
+  padding-bottom: 15rem;
+}
+.pb20 {
+  padding-bottom: 20rem;
+}
+.pb25 {
+  padding-bottom: 25rem;
+}
+.pb30 {
+  padding-bottom: 30rem;
+}
+
+.pl5 {
+  padding-left: 5rem;
+}
+.pl10 {
+  padding-left: 10rem;
+}
+.pl15 {
+  padding-left: 15rem;
+}
+.pl20 {
+  padding-left: 20rem;
+}
+.pl25 {
+  padding-left: 25rem;
+}
+.pl30 {
+  padding-left: 30rem;
+}
+
+.pr5 {
+  padding-right: 5rem;
+}
+.pr10 {
+  padding-right: 10rem;
+}
+.pr15 {
+  padding-right: 15rem;
+}
+.pr20 {
+  padding-right: 20rem;
+}
+.pr25 {
+  padding-right: 25rem;
+}
+.pr30 {
+  padding-right: 30rem;
+}
+.w100{width: 100%}
+.h100{height: 100%}
+
+.f12{font-size:12px;}
+.f14{font-size: 14px;}
+.f15{font-size: 15px;}
+.f16{font-size: 16px;}
+.f18{font-size: 18px;}
+.f20{font-size: 20px;}
+.f24{font-size: 24px;}
+.f30{font-size: 30px;}
+
+//在Chrome浏览器下 input输入框type为number时，去除上下小箭头
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
