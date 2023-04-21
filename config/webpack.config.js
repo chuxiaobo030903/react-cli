@@ -1,5 +1,5 @@
 const { merge } = require('webpack-merge')
-const {baseConfig,productionConfig,developmentConfig} = require('./webpack-config/index')
+const {baseConfig,productionConfig,developmentConfig} = require('zt-webpack')
 // TODO 用户自定义webapck配置
 module.exports = (env) => {
   switch(true) {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { HashRouter,useRoutes } from 'react-router-dom';
 import { _mobx, observer } from "@/store/index";
-import {syncRouter} from "@/components/zt-router";
+import {syncRouter} from "zt-router";
 import { Routes } from "./router";
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/es/locale/zh_CN';
