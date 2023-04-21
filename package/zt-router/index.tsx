@@ -1,7 +1,7 @@
 import { Suspense, lazy } from "react";
 import { Navigate } from "react-router-dom";
 
-//路由守卫方法
+//路由守卫
 const syncRouter = (routeList:any) => {
   let RouteTable: any = [];
   routeList.map((itme: any) => {

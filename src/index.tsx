@@ -4,6 +4,6 @@ import App from "./app";
 import '@assets/iconfont/iconfont.css';
 import '@assets/css/base.less';
 
-ReactDOM.createRoot((document.getElementById("xroot") as any)).render(<App />);
+ReactDOM.createRoot((document.getElementById("root") as any)).render(<App />);
 
 

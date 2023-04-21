@@ -1,4 +1,4 @@
-const Routes: any = [
+const Routes  = [
   {
     path: "/",
     redirect: "/index",
@@ -7,7 +7,41 @@ const Routes: any = [
     path: "/",
     hideInMenu: true,
     component: "components/xhead/index",
-    children: [],
+    children: [
+        {
+          name: "用户管理",
+          icon: "zt-jichushuju",
+          hideInMenu: true,
+          access: "用户管理",
+          path: "/index",
+          children: [
+            {
+              name: "首页",
+              hideInMenu: true,
+              access: "",
+              path: "/index",
+              component: "pages/index/index",
+            }
+          ],
+        },
+        {
+          name: "系统管理",
+          icon: "zt-xitongguanli",
+          hideInMenu: true,
+          access: "系统管理",
+          path: "/demo",
+          children: [
+            {
+              name: "demo",
+              hideInMenu: true,
+              access: "demo",
+              path: "/demo",
+              component: "pages/demo/index",
+            },
+
+          ],
+        },
+    ],
   },
   {
     name: "404",
@@ -26,4 +60,4 @@ const Routes: any = [
   }
 ];
 
-export { Routes };
+export default Routes
