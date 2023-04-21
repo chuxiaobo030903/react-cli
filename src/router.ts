@@ -18,6 +18,11 @@ const Routes: any = [
     name: "铸天页面",
     path: "/index",
     component: "pages/index/index",
+  },
+  {
+    name: "formily设计器",
+    path: "/formily",
+    component: "pages/formily/index",
   }
 ];
 
