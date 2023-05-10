@@ -2,12 +2,9 @@
   "name": "zt-react-cli",
   "version": "1.0.0",
   "private": true,
-  "workspaces": [
-    "package/zt-router",
-    "package/zt-webpack"
-  ],
   "description": "",
   "main": "index.js",
+  "workspaces": [],
   "scripts": {
     "dev": "webpack serve -c ./config/webpack.config.js --env development",
     "build": "webpack -c ./config/webpack.config.js --env production",
@@ -71,7 +68,7 @@
     "webpackbar": "^5.0.2"
   },
   "dependencies": {
-    "zt-router": "^1.0.0",
+    "zt-routers": "^1.0.0",
     "zt-webpack": "^1.0.0",
     "lodash": "^4.17.21",
     "mobx-react": "^7.6.0",

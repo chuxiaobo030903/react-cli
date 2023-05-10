@@ -3,7 +3,7 @@ import { Button } from "antd";
 import dayjs from "dayjs";
 import _ from "lodash";
 
-import FormRender from "hzab-form-render";
+import FormRender from "@/components/form-render";
 
 import "./index.less";
 

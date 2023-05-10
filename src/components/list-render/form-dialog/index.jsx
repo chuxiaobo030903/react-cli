@@ -2,7 +2,7 @@ import { forwardRef, useEffect, useImperativeHandle, useRef, useState, useMemo }
 
 import { Modal, Button, message } from "antd";
 
-import FormRender from "hzab-form-render";
+import FormRender from "@/components/form-render";
 
 import "./index.less";
 
